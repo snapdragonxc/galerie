@@ -1,0 +1,35 @@
+name = "Galerie"
+license = "MIT"
+licenselink = "https://github/snapdragonxc/galerie/master/LICENSE.md"
+description = "Gallery style blogging theme"
+homepage = "https://github/snapdragonxc/galerie/"
+tags = [
+  "blog",
+  "minimal",
+  "minimalist",
+  "responsive"
+]
+features = [
+  "accessibility",
+  "analytics",
+  "comments",
+  "cover-image",
+  "favicon",
+  "multilingual",
+  "opengraph",
+  "pagination",
+  "shortcodes",
+  "single-column",
+  "social-menu",
+  "syntax-highlighting",
+]
+min_version = 0.01
+
+[author]
+  name = "snapdragonxc"
+  homepage = "https://github/snapdragonxc"
+
+[original]
+  name = "hugo-kiss"
+  homepage = "https://www.ribice.ba/hugo-kiss/"
+  repo = "https://github.com/ribice/kiss"

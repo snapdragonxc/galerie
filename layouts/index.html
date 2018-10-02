@@ -1,0 +1,45 @@
+{{ partial "header" . }}
+
+{{ partial "nav" . }}
+
+<div class="wrapper wrapper--large">
+
+  <div class="row">
+    <div class="articles">
+      {{ $paginator := .Paginate (where .Pages "Params.hidden" "ne" true) }}
+      {{ range sort .Paginator.Pages }}
+      <article class="article sm-col-span-12 lg-col-span-6">
+        <div class="article__wrap">
+            <div class="article__heading">
+              <a class="link" href="{{ .Permalink }}">
+                <h2 class="article__title">
+                  <span class="article__title--main">{{ .Title }}{{ if .Draft }} ::Draft{{ end }}</span>
+                  <span class="article__title--sub">{{ .Params.subtitle }}</span>
+                </h2>
+              </a>
+              <h4 class="article__date">{{ .Date.Format "January 2, 2006" }}</h4>
+            </div>
+            <div class="article__content">
+              {{ .Summary | plainify | safeHTML }}
+              {{ if .Truncated }}
+              {{ end }}
+            </div>
+            <div class="article__btn" >
+              <a class="btn" href="{{ .Permalink }}">
+                READ MORE
+                <span class="btn__icon"><i class="fa fa-chevron-circle-right"></i></span>
+              </a>
+            </div>
+          </div>
+      </article>
+      {{ end }}
+      <div class="clear-fix"></div>
+    </div>
+  </div>
+
+  <div class="row">
+      {{ partial "pager" . }}
+  </div>
+</div>
+
+{{ partial "footer" . }}

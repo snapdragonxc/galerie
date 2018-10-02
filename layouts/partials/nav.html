@@ -1,0 +1,26 @@
+<header class="header">
+  <div class="header__wrap">
+    <div class="row">
+    <div class="header__left xs-col-span-12 sm-col-span-6">
+      <a class="header__title-link" href="{{ .Site.BaseURL }}"><h1 class="header__title">{{ .Site.Title }}</h1></a>
+    </div>
+
+    <nav class="header__right xs-col-span-12 sm-col-span-6">
+
+        {{- range $platform, $username := .Site.Params.social -}}
+        {{- if $username -}}
+          <a class="header__social-link" aria-label="{{ $platform }}"
+          href='{{ print ( index $.Site.Data.theme.social.base $platform ) $username }}'
+          {{- if ne $platform "author" -}}
+          target='_blank'
+          {{- end -}}
+          rel='noopener'>
+            {{- partial "svg/icons" $platform -}}
+          </a>
+        {{- end -}}
+        {{- end -}}
+    </nav>
+    <div class="clear-fix"></div>
+    </div>
+  </div>
+</header>

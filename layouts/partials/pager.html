@@ -1,0 +1,21 @@
+
+  <nav class="pager">
+    <div class="pager__nav-prev">
+        {{ if .Paginator.HasPrev }}
+        <a class="btn" href="{{ .Paginator.Prev.URL }}">
+          <span class="btn__icon"><i class="fa fa-chevron-circle-left"></i></span>
+          NEXT
+        </a>
+        {{ end }}
+    </div>
+
+    <div class="pager__nav-next">
+        {{ if .Paginator.HasNext }}
+        <a class="btn" href="{{ .Paginator.Next.URL }}">
+          PREV
+          <span class="btn__icon"><i class="fa fa-chevron-circle-right"></i></span>
+        </a>
+        {{ end }}
+    </div>
+    <div class="clear-fix"></div>
+  </nav>

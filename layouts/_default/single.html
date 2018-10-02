@@ -1,0 +1,47 @@
+{{ partial "header" . }}
+
+<div class="row">
+    {{ partial "nav" . }}
+</div>
+
+<div class="wrapper wrapper--small">
+  <div class="row">
+    <article class="single">
+      <div class="single__wrap">
+        <div class="single-article__heading single-article__heading--single">
+          <h2 class="single-article__title">
+            <span class="single-article__title--main">{{ .Title }}{{ if .Draft }} ::Draft{{ end }}</span>
+            <span class="single-article__title--sub">{{ .Params.subtitle }}</span>
+          </h2>
+          <h4 class="single-article__date">{{ .Date.Format "January 2, 2006" }}</h4>
+        </div>
+
+        <div class="single__content">
+          {{ .Content }}
+        </div>
+        {{ if and (.Site.Params.Info.adsense)  (.Params.adsenseBottom) }}
+        {{ partial "adsense" . }}
+        {{ end}}
+      </div>
+      </article>
+    </div>
+
+  <div class="row">
+    <div class="return">
+        <a class="btn" href="javascript:void(0);" onclick="goBack()">
+          <span class="btn__icon"><i class="fa fa-chevron-circle-left"></i></span>
+          BACK
+        </a>
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+  function goBack() {
+      window.history.back();
+  }
+</script>
+
+{{ partial "footer" . }}

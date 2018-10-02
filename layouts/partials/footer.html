@@ -1,0 +1,16 @@
+<footer class="footer">
+  <div class="footer__wrap">
+    {{if .Site.Params.Info.poweredby}}
+    <p class="footer__link-wrap">
+      A <a class="footer__link" href="https://gohugo.io/">Hugo static site</a> built with the
+      <a class="footer__link" href="https://github.com/snapdragonxc/galerie">Galerie theme</a>.
+    </p>
+    {{ end }}
+    <p class="footer__text">{{ .Site.Copyright | safeHTML }}</p>
+  </div>
+</footer>
+{{ if .Site.GoogleAnalytics }}
+{{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
+</body>
+</html>
